@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTHGUARD – Smart Login & Password Security System | ADS Project</title>
+    
+    <!-- Meta tags for presentation & SEO -->
+    <meta name="description" content="AUTHGUARD is a modern cybersecurity platform demonstrating Advanced Data Structures (Tries, Bloom Filters, Hash Tables, and Sliding Window Rate Limiting) in real-world authentication.">
+    <meta name="theme-color" content="#060814">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome Icons (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Chart.js (CDN for dynamic security charts) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Background Animated Cyber Canvas -->
+    <canvas id="cyber-particles-canvas"></canvas>
+
+    <!-- Main Application Wrapper -->
+    <div class="app-container">
+        
+        <!-- ==========================================
+             SITE NAVIGATION HEADER
+             ========================================== -->
+        <header class="site-header">
+            <div class="container nav-wrapper">
+                <a href="#home" class="brand-logo" aria-label="AUTHGUARD Home">
+                    <div class="brand-icon-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">AUTHGUARD</span>
+                        <span class="brand-subtitle">ADS SECURITY SYSTEM</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="desktop-nav" aria-label="Main Navigation">
+                    <a href="#home" class="nav-link active">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                    <a href="#checker" class="nav-link">
+                        <i class="fa-solid fa-key"></i> Password Checker
+                    </a>
+                    <a href="#login" class="nav-link">
+                        <i class="fa-solid fa-user-lock"></i> Login Simulator
+                    </a>
+                    <a href="#dashboard" class="nav-link">
+                        <i class="fa-solid fa-chart-line"></i> Dashboard
+                    </a>
+                    <a href="#ads" class="nav-link">
+                        <i class="fa-solid fa-microchip"></i> About ADS
+                    </a>
+                </nav>
+
+                <!-- Header Actions / Status Pill -->
+                <div class="header-actions">
+                    <div class="ads-engine-pill" title="Cryptographic & Data Structure Engine Active">
+                        <span class="pulse-dot"></span>
+                        <span>ADS Engine Active</span>
+                    </div>
+                    <button class="btn-mobile-toggle" id="btn-mobile-menu" aria-label="Toggle Mobile Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Drawer -->
+            <nav class="mobile-nav-drawer hidden" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+                <a href="#home" class="nav-link">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <a href="#checker" class="nav-link">
+                    <i class="fa-solid fa-key"></i> Password Checker
+                </a>
+                <a href="#login" class="nav-link">
+                    <i class="fa-solid fa-user-lock"></i> Login Simulator
+                </a>
+                <a href="#dashboard" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i> Dashboard
+                </a>
+                <a href="#ads" class="nav-link">
+                    <i class="fa-solid fa-microchip"></i> About ADS
+                </a>
+            </nav>
+        </header>
+
+        <!-- ==========================================
+             MAIN CONTENT AREA (VIEWS)
+             ========================================== -->
+        <main class="main-content">
+
+            <!-- -----------------------------------------
+                 VIEW 1: HOME PAGE
+                 ----------------------------------------- -->
+            <section id="view-home" class="app-view active">
+                <div class="container">
+                    
+                    <!-- Hero Section -->
+                    <div class="hero-section">
+                        <div class="hero-grid">
+                            <div class="hero-content">
+                                <div class="hero-tag">
+                                    <i class="fa-solid fa-lock-open"></i> Next-Gen Authentication Security
+                                </div>
+                                <h1 class="hero-heading">
+                                    Your Digital Identity.
+                                    <span class="hero-heading-glow">Protected.</span>
+                                </h1>
+                                <p class="hero-description">
+                                    AUTHGUARD demonstrates how <strong>Advanced Data Structures (ADS)</strong> — including 
+                                    <strong>Tries</strong>, <strong>Bloom Filters</strong>, <strong>Salted Cryptographic Hash Tables</strong>, 
+                                    and <strong>Sliding Window Rate Limiters</strong> — fortify modern web authentication against dictionary attacks, credential stuffing, and brute force intrusions.
+                                </p>
+                                <div class="hero-cta-group">
+                                    <a href="#checker" class="btn btn-primary">
+                                        <i class="fa-solid fa-key"></i> Test Password Strength
+                                    </a>
+                                    <a href="#login" class="btn btn-secondary">
+                                        <i class="fa-solid fa-arrow-right-to-bracket"></i> Launch Login Simulator
+                                    </a>
+                                    <a href="#ads" class="btn btn-secondary">
+                                        <i class="fa-solid fa-code-branch"></i> Explore ADS Architecture
+                                    </a>
+                                </div>
+
+                                <!-- Live Telemetry Strip -->
+                                <div class="hero-telemetry-strip">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-value text-cyan">O(L)</span>
+                                        <span class="telemetry-label">Trie Search Time</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-value text-purple">O(k)</span>
+                                        <span class="telemetry-label">Bloom Filter Query</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-value text-emerald">SHA-256</span>
+                                        <span class="telemetry-label">One-Way Salting</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-value">5 Max</span>
+                                        <span class="telemetry-label">Lockout Threshold</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Hero Cyber Visualizer Box -->
+                            <div class="hero-visual-card">
+                                <div class="chamber-header">
+                                    <div class="chamber-title">
+                                        <i class="fa-solid fa-terminal"></i> SECURITY OPERATIONS CENTER
+                                    </div>
+                                    <div class="chamber-window-controls">
+                                        <span class="chamber-dot red"></span>
+                                        <span class="chamber-dot yellow"></span>
+                                        <span class="chamber-dot green"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="chamber-radar-grid">
+                                    <div class="chamber-status-row">
+                                        <span class="text-slate-400">Threat Defense Protocol</span>
+                                        <span class="badge-success">ACTIVE & SECURE</span>
+                                    </div>
+                                    <div class="chamber-status-row">
+                                        <span class="text-slate-400">Trie Leaked Corpus</span>
+                                        <span class="text-cyan font-mono">1,500+ Breached Signatures</span>
+                                    </div>
+                                    <div class="chamber-status-row">
+                                        <span class="text-slate-400">Bloom Filter Capacity</span>
+                                        <span class="text-purple font-mono">128-Bit Array (k=3 Hashes)</span>
+                                    </div>
+                                    <div class="chamber-status-row">
+                                        <span class="text-slate-400">Brute Force Quarantine</span>
+                                        <span class="text-emerald font-mono">Sliding Window Online</span>
+                                    </div>
+                                </div>
+
+                                <div class="chamber-hash-row">
+                                    <span class="text-slate-400">// Sample Salted Digest</span><br>
+                                    <span class="text-cyan">HASH:</span> e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Highlights Grid -->
+                    <div class="features-grid">
+                        <div class="glass-card feature-card">
+                            <div class="feature-icon-box cyan">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </div>
+                            <h3 class="feature-card-title">Real-Time Entropy & Trie Detection</h3>
+                            <p class="feature-card-desc">
+                                Evaluates password complexity using Hartley-Shannon Information Entropy mathematics. 
+                                Simultaneously scans the password against a prefix-tree Trie in O(L) time to detect compromised wordlist phrases.
+                            </p>
+                            <span class="feature-ads-badge">ADS: Trie (Prefix Tree) O(L)</span>
+                        </div>
+
+                        <div class="glass-card feature-card glow-purple">
+                            <div class="feature-icon-box purple">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <h3 class="feature-card-title">Cryptographic Salting & Zero-Knowledge Storage</h3>
+                            <p class="feature-card-desc">
+                                Prevents Rainbow Table attacks by generating 16-byte random salts per account. 
+                                Computes SHA-256 digests locally with zero plaintext persistence and zero external telemetry transmission.
+                            </p>
+                            <span class="feature-ads-badge">ADS: Cryptographic Hash O(1)</span>
+                        </div>
+
+                        <div class="glass-card feature-card">
+                            <div class="feature-icon-box emerald">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <h3 class="feature-card-title">Automated Account Lockout & Rate Limiting</h3>
+                            <p class="feature-card-desc">
+                                Implements sliding-window queue rate limiting to throttle rapid credential stuffing. 
+                                Automatically quarantines simulated user accounts after 5 consecutive failed login attempts.
+                            </p>
+                            <span class="feature-ads-badge">ADS: Sliding Window Queue O(1)</span>
+                        </div>
+                    </div>
+
+                    <!-- Educational ADS Callout Card -->
+                    <div class="ads-banner-card">
+                        <div class="ads-banner-content">
+                            <h3>College Project for Advanced Data Structures</h3>
+                            <p>
+                                Dive into the mathematical and algorithmic architecture behind modern identity security. 
+                                Explore interactive Trie traversal, Bloom filter bit-arrays, and SHA-256 avalanche effect matrices.
+                            </p>
+                        </div>
+                        <a href="#ads" class="btn btn-purple">
+                            <i class="fa-solid fa-flask"></i> Open ADS Laboratory
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- -----------------------------------------
+                 VIEW 2: PASSWORD STRENGTH CHECKER
+                 ----------------------------------------- -->
+            <section id="view-checker" class="app-view">
+                <div class="container">
+                    
+                    <div class="view-header">
+                        <span class="view-badge">
+                            <i class="fa-solid fa-microscope"></i> Security Analysis Chamber
+                        </span>
+                        <h2 class="view-title">Password Strength & Entropy Analyzer</h2>
+                        <p class="view-desc">
+                            Test any password in real time against cryptographic entropy formulas, structural complexity requirements, 
+                            and Trie-indexed breached databases.
+                        </p>
+                    </div>
+
+                    <div class="checker-grid">
+                        
+                        <!-- Left Column: Input Chamber & Live Meter -->
+                        <div class="glass-card strength-gauge-card">
+                            
+                            <!-- Password Input -->
+                            <div class="form-group">
+                                <label class="form-label" for="checker-password-input">
+                                    <span>Enter Password to Analyze</span>
+                                    <span class="text-xs text-slate-400">Never transmitted over network</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-lock input-icon"></i>
+                                    <input 
+                                        type="password" 
+                                        id="checker-password-input" 
+                                        class="form-input font-mono" 
+                                        placeholder="Type a password (e.g. MySecurePass#2026)..."
+                                        autocomplete="off"
+                                        spellcheck="false"
+                                    >
+                                    <button type="button" id="checker-toggle-visibility" class="input-action-btn" style="right: 2.8rem;" aria-label="Toggle Password Visibility">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                    <button type="button" id="checker-clear-input" class="input-action-btn" aria-label="Clear Password Input">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Strength Gauge & Progress -->
+                            <div>
+                                <div class="gauge-header-row">
+                                    <div>
+                                        <div class="gauge-tier-label">Evaluated Security Tier</div>
+                                        <div id="checker-strength-tier" class="gauge-tier-value">Awaiting Input</div>
+                                    </div>
+                                    <div id="checker-strength-score" class="gauge-score-value">0/5</div>
+                                </div>
+                                <div class="strength-track" style="margin-top: 0.75rem;">
+                                    <div id="checker-strength-progress" class="strength-progress"></div>
+                                </div>
+                            </div>
+
+                            <!-- Telemetry Mini Grid -->
+                            <div class="telemetry-mini-grid">
+                                <div class="telemetry-cell">
+                                    <span class="cell-label">Information Entropy</span>
+                                    <span id="checker-entropy-val" class="cell-value text-cyan">0 bits</span>
+                                </div>
+                                <div class="telemetry-cell">
+                                    <span class="cell-label">Est. Crack Time</span>
+                                    <span id="checker-crack-time" class="cell-value">Instant</span>
+                                </div>
+                                <div class="telemetry-cell">
+                                    <span class="cell-label">Length</span>
+                                    <span id="checker-length-val" class="cell-value">0 chars</span>
+                                </div>
+                                <div class="telemetry-cell">
+                                    <span class="cell-label">Pool Size (R)</span>
+                                    <span id="checker-pool-val" class="cell-value">0 chars</span>
+                                </div>
+                            </div>
+
+                            <!-- Security Checklist -->
+                            <div>
+                                <div class="form-label">
+                                    <span>Cryptographic Requirements Checklist</span>
+                                </div>
+                                <div class="checklist-container">
+                                    <div id="chk-length" class="checklist-item failed">
+                                        <div class="chk-left">
+                                            <span class="chk-icon"><i class="fa-solid fa-circle-xmark text-rose-500"></i></span>
+                                            <span>Minimum 8 Characters (12+ recommended)</span>
+                                        </div>
+                                        <span class="chk-badge">0/8 chars</span>
+                                    </div>
+                                    <div id="chk-upper" class="checklist-item failed">
+                                        <div class="chk-left">
+                                            <span class="chk-icon"><i class="fa-solid fa-circle-xmark text-rose-500"></i></span>
+                                            <span>Uppercase Letters (A-Z)</span>
+                                        </div>
+                                        <span class="chk-badge">Pool +26</span>
+                                    </div>
+                                    <div id="chk-lower" class="checklist-item failed">
+                                        <div class="chk-left">
+                                            <span class="chk-icon"><i class="fa-solid fa-circle-xmark text-rose-500"></i></span>
+                                            <span>Lowercase Letters (a-z)</span>
+                                        </div>
+                                        <span class="chk-badge">Pool +26</span>
+                                    </div>
+                                    <div id="chk-number" class="checklist-item failed">
+                                        <div class="chk-left">
+                                            <span class="chk-icon"><i class="fa-solid fa-circle-xmark text-rose-500"></i></span>
+                                            <span>Numbers (0-9)</span>
+                                        </div>
+                                        <span class="chk-badge">Pool +10</span>
+                                    </div>
+                                    <div id="chk-special" class="checklist-item failed">
+                                        <div class="chk-left">
+                                            <span class="chk-icon"><i class="fa-solid fa-circle-xmark text-rose-500"></i></span>
+                                            <span>Special Characters (!@#$%^&*)</span>
+                                        </div>
+                                        <span class="chk-badge">Pool +33</span>
+                                    </div>
+                                    <div id="chk-trie" class="checklist-item failed">
+                                        <div class="chk-left">
+                                            <span class="chk-icon"><i class="fa-solid fa-circle-xmark text-rose-500"></i></span>
+                                            <span>ADS Breached Dictionary Check (Trie O(L))</span>
+                                        </div>
+                                        <span class="chk-badge">Dictionary clean</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Suggestions -->
+                            <div class="suggestions-box">
+                                <div class="suggestions-title">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-cyan"></i> Algorithmic Recommendations
+                                </div>
+                                <ul id="checker-suggestions-list" class="suggestions-list">
+                                    <li class="suggestion-item suggestion-info">
+                                        <i class="fa-solid fa-lightbulb"></i>
+                                        <span>Type a password above to trigger real-time ADS entropy math and Trie dictionary screening.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <!-- Right Column: Strong Password Generator -->
+                        <div class="glass-card generator-card">
+                            <div>
+                                <span class="view-badge purple" style="margin-bottom: 0.5rem;">
+                                    <i class="fa-solid fa-dice"></i> CSPRNG Engine
+                                </span>
+                                <h3 style="font-size: 1.3rem; font-weight: 700;">Password Generator</h3>
+                                <p class="text-xs text-slate-400" style="margin-top: 0.25rem;">
+                                    Generates high-entropy passwords using cryptographic random byte arrays and Fisher-Yates shuffling.
+                                </p>
+                            </div>
+
+                            <!-- Generated Output -->
+                            <div class="form-group" style="margin-bottom: 0.5rem;">
+                                <label class="form-label" for="gen-password-output">Generated Secure Password</label>
+                                <div class="generator-output-wrap">
+                                    <input 
+                                        type="text" 
+                                        id="gen-password-output" 
+                                        class="form-input font-mono" 
+                                        readonly
+                                    >
+                                    <button type="button" id="gen-btn-copy" class="btn btn-secondary btn-icon-only" title="Copy to Clipboard">
+                                        <i class="fa-solid fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button type="button" id="gen-btn-use-generated" class="btn btn-sm btn-secondary" style="align-self: flex-start;">
+                                <i class="fa-solid fa-arrow-left"></i> Test this password in Security Chamber
+                            </button>
+
+                            <!-- Length Slider -->
+                            <div class="slider-container">
+                                <div class="slider-header">
+                                    <span>Password Length</span>
+                                    <span id="gen-length-display" class="font-mono text-cyan font-bold">16</span>
+                                </div>
+                                <input 
+                                    type="range" 
+                                    id="gen-length-slider" 
+                                    class="slider-input" 
+                                    min="8" 
+                                    max="32" 
+                                    value="16"
+                                >
+                            </div>
+
+                            <!-- Character Set Toggles -->
+                            <div class="gen-options-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="gen-chk-upper" checked>
+                                    <span>Uppercase (A-Z)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="gen-chk-lower" checked>
+                                    <span>Lowercase (a-z)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="gen-chk-numbers" checked>
+                                    <span>Numbers (0-9)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="gen-chk-symbols" checked>
+                                    <span>Symbols (!@#$)</span>
+                                </label>
+                                <label class="checkbox-label" style="grid-column: span 2;">
+                                    <input type="checkbox" id="gen-chk-ambiguous" checked>
+                                    <span>Exclude ambiguous characters (l, 1, I, 0, O)</span>
+                                </label>
+                            </div>
+
+                            <button type="button" id="gen-btn-generate" class="btn btn-primary" style="margin-top: 0.5rem;">
+                                <i class="fa-solid fa-arrows-rotate"></i> Generate New Password
+                            </button>
+
+                            <!-- ADS Note -->
+                            <div style="background: rgba(11, 15, 36, 0.5); padding: 0.85rem; border-radius: 8px; border-left: 3px solid var(--accent-purple); font-size: 0.78rem; color: var(--text-secondary);">
+                                <strong class="text-purple">ADS Principle:</strong> Information Entropy E = L · log2(R). 
+                                A 16-character string drawn from 95 characters achieves ~105 bits of entropy, requiring 2^104 operations to crack.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- -----------------------------------------
+                 VIEW 3: LOGIN & REGISTRATION SIMULATOR
+                 ----------------------------------------- -->
+            <section id="view-login" class="app-view">
+                <div class="container">
+                    
+                    <div class="view-header">
+                        <span class="view-badge">
+                            <i class="fa-solid fa-shield-cat"></i> Identity Provider Simulation
+                        </span>
+                        <h2 class="view-title">Secure Authentication Simulator</h2>
+                        <p class="view-desc">
+                            Simulates end-to-end user registration and authentication. Demonstrates salted SHA-256 storage, 
+                            sliding-window rate limiting, and 5-attempt automatic account lockout.
+                        </p>
+                    </div>
+
+                    <div class="auth-simulator-container">
+
+                        <!-- Active Logged-in Session Banner -->
+                        <div id="auth-session-container" class="session-card hidden">
+                            <div class="session-header">
+                                <div class="session-user-badge">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                    <span>Authenticated Session: <strong id="session-username">User</strong></span>
+                                </div>
+                                <button type="button" id="session-logout-btn" class="btn btn-sm btn-danger">
+                                    <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+                                </button>
+                            </div>
+
+                            <div class="session-meta-grid">
+                                <div class="session-meta-item">
+                                    <span>Session Token (CSPRNG):</span>
+                                    <code id="session-token">tok_...</code>
+                                </div>
+                                <div class="session-meta-item">
+                                    <span>Security Profile Tier:</span>
+                                    <code id="session-tier">Strong</code>
+                                </div>
+                                <div class="session-meta-item">
+                                    <span>Salt Digest:</span>
+                                    <code id="session-salt">...</code>
+                                </div>
+                                <div class="session-meta-item">
+                                    <span>SHA-256 Hash Digest:</span>
+                                    <code id="session-hash">...</code>
+                                </div>
+                            </div>
+
+                            <!-- Simulated 2FA / TOTP Box -->
+                            <div class="session-2fa-box">
+                                <div>
+                                    <div class="text-xs font-bold text-slate-300">TWO-FACTOR AUTHENTICATION (2FA) SIMULATOR</div>
+                                    <div class="text-xs text-slate-400">Time-based One-Time Password (TOTP) Algorithm</div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span id="session-otp-display" class="otp-digit-display">------</span>
+                                    <button type="button" id="session-btn-otp" class="btn btn-sm btn-secondary">
+                                        <i class="fa-solid fa-arrows-rotate"></i> Generate OTP
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Auth Mode Tabs -->
+                        <div class="auth-tab-bar">
+                            <button type="button" id="auth-tab-login" class="auth-tab-btn active">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+                            </button>
+                            <button type="button" id="auth-tab-register" class="auth-tab-btn">
+                                <i class="fa-solid fa-user-plus"></i> Register Account
+                            </button>
+                        </div>
+
+                        <!-- Demo Credentials Quick Chips -->
+                        <div class="quick-creds-bar">
+                            <div class="quick-creds-title">
+                                <i class="fa-solid fa-bolt"></i> Quick-Fill Pre-Seeded Demo Accounts:
+                            </div>
+                            <div class="quick-chips-wrap">
+                                <button type="button" class="btn-quick-cred" data-user="admin_sec" data-pass="Admin@Secure2026!">
+                                    <strong>admin_sec</strong> (Strong)
+                                </button>
+                                <button type="button" class="btn-quick-cred" data-user="student_ads" data-pass="Student#ADS404!">
+                                    <strong>student_ads</strong> (Strong)
+                                </button>
+                                <button type="button" class="btn-quick-cred" data-user="demo_user" data-pass="Pass@12345">
+                                    <strong>demo_user</strong> (3/5 Attempts)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PANEL 1: LOGIN -->
+                        <div id="auth-panel-login" class="glass-card">
+                            <div id="login-alert-box" class="alert-box alert-info hidden"></div>
+
+                            <form onsubmit="return false;">
+                                <div class="form-group">
+                                    <label class="form-label" for="login-username">Username</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-user input-icon"></i>
+                                        <input 
+                                            type="text" 
+                                            id="login-username" 
+                                            class="form-input" 
+                                            placeholder="Enter username..." 
+                                            autocomplete="username"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label for="login-password">Password</label>
+                                        <div id="login-attempts-badge" class="text-xs">
+                                            <span class="text-emerald-400 font-medium">
+                                                <i class="fa-solid fa-shield-check"></i> Attempts: 0/5
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-lock input-icon"></i>
+                                        <input 
+                                            type="password" 
+                                            id="login-password" 
+                                            class="form-input" 
+                                            placeholder="Enter password..."
+                                            autocomplete="current-password"
+                                        >
+                                        <button type="button" id="login-toggle-eye" class="input-action-btn" aria-label="Toggle Password">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" id="login-submit-btn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Secure Sign In
+                                </button>
+                            </form>
+
+                            <div style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                                <i class="fa-solid fa-shield-halved"></i> 
+                                Educational ADS Sandbox: Accounts lock after 5 failed attempts for 60 seconds.
+                            </div>
+                        </div>
+
+                        <!-- PANEL 2: REGISTRATION -->
+                        <div id="auth-panel-register" class="glass-card hidden">
+                            <div id="reg-alert-box" class="alert-box alert-info hidden"></div>
+
+                            <form onsubmit="return false;">
+                                <div class="form-group">
+                                    <label class="form-label" for="reg-username">Choose Username</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-user input-icon"></i>
+                                        <input 
+                                            type="text" 
+                                            id="reg-username" 
+                                            class="form-input" 
+                                            placeholder="At least 3 characters..."
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label for="reg-password">Create Password</label>
+                                        <span id="reg-strength-text" class="text-xs font-mono"></span>
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-lock input-icon"></i>
+                                        <input 
+                                            type="password" 
+                                            id="reg-password" 
+                                            class="form-input" 
+                                            placeholder="Min 8 chars, uppercase, symbol, number..."
+                                        >
+                                        <button type="button" id="reg-toggle-eye-1" class="input-action-btn" aria-label="Toggle Password">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Mini strength bar -->
+                                    <div class="strength-track" style="height: 4px; margin-top: 6px;">
+                                        <div id="reg-strength-bar" class="strength-progress"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="reg-confirm-password">Confirm Password</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-solid fa-lock input-icon"></i>
+                                        <input 
+                                            type="password" 
+                                            id="reg-confirm-password" 
+                                            class="form-input" 
+                                            placeholder="Repeat password exactly..."
+                                        >
+                                        <button type="button" id="reg-toggle-eye-2" class="input-action-btn" aria-label="Toggle Password">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" id="reg-submit-btn" class="btn btn-purple" style="width: 100%; margin-top: 0.5rem;">
+                                    <i class="fa-solid fa-user-plus"></i> Create Account
+                                </button>
+                            </form>
+
+                            <div style="margin-top: 1.5rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                                <i class="fa-solid fa-database"></i> 
+                                Passwords are salted with a 16-byte cryptographically secure random value and hashed via SHA-256 before storage in localStorage.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- -----------------------------------------
+                 VIEW 4: SECURITY DASHBOARD
+                 ----------------------------------------- -->
+            <section id="view-dashboard" class="app-view">
+                <div class="container">
+                    
+                    <div class="view-header">
+                        <span class="view-badge">
+                            <i class="fa-solid fa-chart-pie"></i> Real-Time Telemetry
+                        </span>
+                        <h2 class="view-title">Security Operations Dashboard</h2>
+                        <p class="view-desc">
+                            Monitor authentication activity, evaluate fleet-wide password entropy distribution, and analyze forensic audit trails.
+                        </p>
+                    </div>
+
+                    <!-- KPI Metric Cards -->
+                    <div class="dash-kpi-grid">
+                        <div class="kpi-card cyan">
+                            <i class="fa-solid fa-users kpi-icon"></i>
+                            <span id="dash-total-users" class="kpi-value">4</span>
+                            <span class="kpi-label">Registered Users</span>
+                        </div>
+                        <div class="kpi-card emerald">
+                            <i class="fa-solid fa-circle-check kpi-icon"></i>
+                            <span id="dash-success-logins" class="kpi-value">3</span>
+                            <span class="kpi-label">Successful Logins</span>
+                        </div>
+                        <div class="kpi-card rose">
+                            <i class="fa-solid fa-circle-xmark kpi-icon"></i>
+                            <span id="dash-failed-logins" class="kpi-value">4</span>
+                            <span class="kpi-label">Failed Attempts</span>
+                        </div>
+                        <div class="kpi-card amber">
+                            <i class="fa-solid fa-lock kpi-icon"></i>
+                            <span id="dash-locked-accounts" class="kpi-value">0</span>
+                            <span class="kpi-label">Locked Accounts</span>
+                        </div>
+                        <div class="kpi-card purple">
+                            <i class="fa-solid fa-gauge-high kpi-icon"></i>
+                            <span id="dash-avg-entropy" class="kpi-value">72.3 bits</span>
+                            <span class="kpi-label">Avg Password Entropy</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Charts Grid -->
+                    <div class="dash-charts-grid">
+                        
+                        <!-- Chart 1: Strength Distribution -->
+                        <div class="glass-card">
+                            <div class="chart-card-header">
+                                <div class="chart-title">
+                                    <i class="fa-solid fa-chart-pie text-cyan"></i> Password Strength Distribution
+                                </div>
+                                <span class="text-xs text-slate-400">Userbase breakdown</span>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="chart-strength-dist"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Chart 2: Activity Events -->
+                        <div class="glass-card">
+                            <div class="chart-card-header">
+                                <div class="chart-title">
+                                    <i class="fa-solid fa-chart-column text-purple"></i> Security Event Analytics
+                                </div>
+                                <span class="text-xs text-slate-400">Success vs Defended Intrusions</span>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="chart-activity-trends"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Dashboard Action & Filter Bar -->
+                    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+                        <div class="dash-actions-bar">
+                            <div class="dash-filter-group">
+                                <div class="input-wrapper" style="width: 100%;">
+                                    <i class="fa-solid fa-magnifying-glass input-icon"></i>
+                                    <input 
+                                        type="text" 
+                                        id="dash-search-logs" 
+                                        class="form-input" 
+                                        placeholder="Search by user, IP, or details..."
+                                    >
+                                </div>
+                                <select id="dash-filter-status" class="form-input" style="max-width: 150px; padding-left: 1rem;">
+                                    <option value="ALL">All Statuses</option>
+                                    <option value="SUCCESS">SUCCESS</option>
+                                    <option value="FAILED">FAILED</option>
+                                    <option value="LOCKED">LOCKED</option>
+                                    <option value="REGISTERED">REGISTERED</option>
+                                </select>
+                            </div>
+
+                            <div class="dash-buttons-group">
+                                <button type="button" id="dash-btn-bruteforce" class="btn btn-sm btn-danger" title="Simulates rapid 5-attempt dictionary attack to trigger account lock">
+                                    <i class="fa-solid fa-skull-crossbones"></i> Simulate Brute Force
+                                </button>
+                                <button type="button" id="dash-btn-unlock" class="btn btn-sm btn-secondary" title="Manually unlocks all locked user accounts">
+                                    <i class="fa-solid fa-lock-open"></i> Unlock All
+                                </button>
+                                <button type="button" id="dash-btn-seed" class="btn btn-sm btn-secondary" title="Inject simulated network events">
+                                    <i class="fa-solid fa-network-wired"></i> Inject Traffic
+                                </button>
+                                <button type="button" id="dash-btn-export" class="btn btn-sm btn-primary" title="Export audit trail to structured JSON">
+                                    <i class="fa-solid fa-download"></i> Export JSON
+                                </button>
+                                <button type="button" id="dash-btn-reset" class="btn btn-sm btn-secondary" title="Reset all demo data to baseline">
+                                    <i class="fa-solid fa-rotate-left"></i> Reset DB
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Live Audit Log Table -->
+                        <div class="logs-table-wrapper">
+                            <table class="logs-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>User Account</th>
+                                        <th>IP Address</th>
+                                        <th>Status</th>
+                                        <th>Security Details</th>
+                                        <th>Hash Digest Snippet</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dash-logs-tbody">
+                                    <!-- Rendered dynamically via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- -----------------------------------------
+                 VIEW 5: ABOUT ADS (ADVANCED DATA STRUCTURES)
+                 ----------------------------------------- -->
+            <section id="view-ads" class="app-view">
+                <div class="container">
+                    
+                    <div class="view-header">
+                        <span class="view-badge purple">
+                            <i class="fa-solid fa-graduation-cap"></i> Academic Curriculum Deep Dive
+                        </span>
+                        <h2 class="view-title">Advanced Data Structures in Cybersecurity</h2>
+                        <p class="view-desc">
+                            Explore interactive laboratories demonstrating how theoretical data structures solve real-world authentication, 
+                            breach screening, and brute force mitigation challenges.
+                        </p>
+                    </div>
+
+                    <div class="ads-lab-grid">
+
+                        <!-- SECTION 1: TRIE (PREFIX TREE) VISUALIZER -->
+                        <div class="glass-card">
+                            <h3 class="lab-section-title">
+                                <i class="fa-solid fa-network-wired text-cyan"></i> 
+                                1. Trie (Prefix Tree) for Breached Wordlist Detection
+                            </h3>
+                            <p class="lab-section-desc">
+                                A <strong>Trie</strong> allows searching a dictionary of millions of leaked passwords in 
+                                <strong>O(L)</strong> time, where <em>L</em> is the length of the candidate password, entirely independent of the dictionary size <em>N</em>. 
+                                Linear search across a 10-million password dump would require <em>O(N · L)</em> comparisons!
+                            </p>
+
+                            <div class="trie-visualizer-box">
+                                <div class="trie-input-bar">
+                                    <div class="input-wrapper" style="flex: 1;">
+                                        <i class="fa-solid fa-magnifying-glass input-icon"></i>
+                                        <input 
+                                            type="text" 
+                                            id="ads-trie-input" 
+                                            class="form-input font-mono" 
+                                            placeholder="Type word to search Trie (e.g., admin, password, dragon)..."
+                                            value="admin"
+                                        >
+                                    </div>
+                                    <button type="button" id="ads-trie-btn-search" class="btn btn-primary">
+                                        <i class="fa-solid fa-play"></i> Trace Search O(L)
+                                    </button>
+                                    <button type="button" id="ads-trie-btn-insert" class="btn btn-secondary">
+                                        <i class="fa-solid fa-plus"></i> Insert Word
+                                    </button>
+                                </div>
+
+                                <div class="trie-stats-row">
+                                    <span>Trie Corpus Words: <strong id="ads-trie-word-count">60</strong></span>
+                                    <span>Allocated Trie Nodes: <strong id="ads-trie-node-count">342</strong></span>
+                                    <span>Search Complexity: <strong>O(L)</strong></span>
+                                </div>
+
+                                <!-- Traversal Steps Flow -->
+                                <div id="ads-trie-steps"></div>
+
+                                <!-- SVG Tree Visualization -->
+                                <div id="ads-trie-canvas" style="background: rgba(11, 15, 36, 0.7); border-radius: 12px; border: 1px solid var(--border-glass); padding: 1rem;"></div>
+
+                                <!-- Result Banner -->
+                                <div id="ads-trie-result"></div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2: BLOOM FILTER VISUALIZER -->
+                        <div class="glass-card glow-purple">
+                            <h3 class="lab-section-title">
+                                <i class="fa-solid fa-filter text-purple"></i> 
+                                2. Bloom Filter (Probabilistic Set Membership)
+                            </h3>
+                            <p class="lab-section-desc">
+                                A <strong>Bloom Filter</strong> is a space-efficient probabilistic data structure that tests whether an element is a member of a set in 
+                                <strong>O(k)</strong> time, using <em>k</em> independent hash functions over a bit-array of size <em>m</em>.
+                                Crucially: <strong>False Negatives are IMPOSSIBLE (0%)</strong>. If the filter returns negative, the password is definitively NOT compromised.
+                            </p>
+
+                            <div class="trie-visualizer-box">
+                                <div class="trie-input-bar">
+                                    <div class="input-wrapper" style="flex: 1;">
+                                        <i class="fa-solid fa-fingerprint input-icon"></i>
+                                        <input 
+                                            type="text" 
+                                            id="ads-bloom-input" 
+                                            class="form-input font-mono" 
+                                            placeholder="Type password to test bit-hash mapping..." 
+                                            value="password"
+                                        >
+                                    </div>
+                                    <button type="button" id="ads-bloom-btn-test" class="btn btn-purple">
+                                        <i class="fa-solid fa-calculator"></i> Query Bloom Filter O(k)
+                                    </button>
+                                    <button type="button" id="ads-bloom-btn-add" class="btn btn-secondary">
+                                        <i class="fa-solid fa-plus"></i> Add Signature
+                                    </button>
+                                </div>
+
+                                <div class="trie-stats-row">
+                                    <span>Bit Array Occupancy: <strong id="ads-bloom-occupancy">0 / 128</strong></span>
+                                    <span>Theoretical False Positive Rate: <strong id="ads-bloom-fp-rate">0.00%</strong></span>
+                                    <span>Hash Functions (k): <strong>3 (FNV-1a, DJB2, SDBM)</strong></span>
+                                </div>
+
+                                <!-- 128 Bit Array Grid -->
+                                <div>
+                                    <div class="text-xs text-slate-400 mb-2">
+                                        <strong>128-Bit Memory Register:</strong> (Glowing purple cells indicate bits activated by current query)
+                                    </div>
+                                    <div id="ads-bloom-grid" class="bloom-grid-container"></div>
+                                </div>
+
+                                <!-- Computed Hashes Display -->
+                                <div id="ads-bloom-hashes" class="bloom-hashes-bar"></div>
+
+                                <!-- Verdict Banner -->
+                                <div id="ads-bloom-verdict"></div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3: SHA-256 AVALANCHE EFFECT & SALTING -->
+                        <div class="glass-card">
+                            <h3 class="lab-section-title">
+                                <i class="fa-solid fa-cubes text-emerald"></i> 
+                                3. Cryptographic Avalanche Effect & Salting (SHA-256)
+                            </h3>
+                            <p class="lab-section-desc">
+                                Cryptographic hash functions must exhibit strict <strong>diffusion</strong>: flipping a single bit in the input must unpredictably change 
+                                approximately <strong>50% of the output bits</strong> (Strict Avalanche Criterion). 
+                                Combined with unique salts, this renders precomputed Rainbow Table lookup attacks impossible.
+                            </p>
+
+                            <div class="avalanche-grid">
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label class="form-label" for="ads-avalanche-input-a">Input String A</label>
+                                    <input 
+                                        type="text" 
+                                        id="ads-avalanche-input-a" 
+                                        class="form-input font-mono" 
+                                        value="Passguard2026"
+                                    >
+                                    <div class="text-xs font-mono text-slate-500 mt-1 truncate" id="ads-avalanche-hash-a"></div>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label class="form-label" for="ads-avalanche-input-b">Input String B (1 character changed)</label>
+                                    <input 
+                                        type="text" 
+                                        id="ads-avalanche-input-b" 
+                                        class="form-input font-mono" 
+                                        value="Passguard2027"
+                                    >
+                                    <div class="text-xs font-mono text-slate-500 mt-1 truncate" id="ads-avalanche-hash-b"></div>
+                                </div>
+                            </div>
+
+                            <div class="avalanche-stats-card">
+                                <div class="avalanche-stat-item">
+                                    <div id="ads-avalanche-percent" class="stat-num">50.0%</div>
+                                    <div class="stat-desc">Flipped Bit Ratio</div>
+                                </div>
+                                <div class="avalanche-stat-item">
+                                    <div id="ads-avalanche-bits" class="stat-num text-purple">128 / 256 bits</div>
+                                    <div class="stat-desc">Hamming Distance</div>
+                                </div>
+                                <div class="avalanche-stat-item">
+                                    <div class="stat-num text-emerald">O(1)</div>
+                                    <div class="stat-desc">Verification Time</div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-xs text-slate-400 mb-2">
+                                    <strong>256-Bit SHA-256 Diffusion Matrix:</strong> (Cyan squares represent bits that inverted due to the 1-character difference)
+                                </div>
+                                <div id="ads-avalanche-matrix" class="avalanche-matrix-wrap"></div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 4: ALGORITHMIC COMPLEXITY COMPARISON TABLE -->
+                        <div class="glass-card">
+                            <h3 class="lab-section-title">
+                                <i class="fa-solid fa-table-list text-cyan"></i> 
+                                4. Algorithmic Complexity Benchmark for Authentication Systems
+                            </h3>
+                            <p class="lab-section-desc">
+                                Theoretical time and space complexity comparison across data structures used in modern cybersecurity architectures:
+                            </p>
+
+                            <div class="complexity-table-wrapper">
+                                <table class="complexity-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Data Structure / Technique</th>
+                                            <th>Cybersecurity Use Case</th>
+                                            <th>Search / Query Time</th>
+                                            <th>Insertion Time</th>
+                                            <th>Space Complexity</th>
+                                            <th>Security Guarantee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="font-bold text-slate-200">
+                                                <i class="fa-solid fa-network-wired text-cyan mr-1"></i> Trie (Prefix Tree)
+                                            </td>
+                                            <td>Compromised Wordlist & Prefix Screening</td>
+                                            <td><span class="complexity-tag tag-cyan">O(L)</span></td>
+                                            <td><span class="complexity-tag tag-cyan">O(L)</span></td>
+                                            <td><span class="complexity-tag tag-amber">O(Σ · L · N)</span></td>
+                                            <td>Exact prefix & word identification</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold text-slate-200">
+                                                <i class="fa-solid fa-filter text-purple mr-1"></i> Bloom Filter
+                                            </td>
+                                            <td>High-speed Breached Credential Filtering</td>
+                                            <td><span class="complexity-tag tag-green">O(k)</span></td>
+                                            <td><span class="complexity-tag tag-green">O(k)</span></td>
+                                            <td><span class="complexity-tag tag-green">O(m) bits</span></td>
+                                            <td>Zero false negatives; probabilistic positive</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold text-slate-200">
+                                                <i class="fa-solid fa-hashtag text-emerald mr-1"></i> Hash Table (Salted SHA-256)
+                                            </td>
+                                            <td>User Credential Authentication</td>
+                                            <td><span class="complexity-tag tag-green">O(1)</span></td>
+                                            <td><span class="complexity-tag tag-green">O(1)</span></td>
+                                            <td><span class="complexity-tag tag-cyan">O(N)</span></td>
+                                            <td>Cryptographic preimage & collision resistance</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold text-slate-200">
+                                                <i class="fa-solid fa-clock-rotate-left text-cyan mr-1"></i> Sliding Window (Queue)
+                                            </td>
+                                            <td>Brute Force Rate Limiting</td>
+                                            <td><span class="complexity-tag tag-green">O(1) amortized</span></td>
+                                            <td><span class="complexity-tag tag-green">O(1)</span></td>
+                                            <td><span class="complexity-tag tag-green">O(W) requests</span></td>
+                                            <td>Automated threshold intrusion mitigation</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold text-slate-200">
+                                                <i class="fa-solid fa-list text-slate-400 mr-1"></i> Naive Linear Array (Comparison)
+                                            </td>
+                                            <td>Unindexed Password Checking</td>
+                                            <td><span class="complexity-tag tag-red">O(N · L)</span></td>
+                                            <td><span class="complexity-tag tag-green">O(1)</span></td>
+                                            <td><span class="complexity-tag tag-cyan">O(N · L)</span></td>
+                                            <td>Vulnerable to Denial of Service delays</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-bold text-slate-200">
+                                                <i class="fa-solid fa-skull text-rose-400 mr-1"></i> Brute-Force Key Space
+                                            </td>
+                                            <td>Attacker Exhaustive Search</td>
+                                            <td><span class="complexity-tag tag-red">O(R^L)</span></td>
+                                            <td>N/A</td>
+                                            <td><span class="complexity-tag tag-green">O(1)</span></td>
+                                            <td>Exponential work factor protects high entropy</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ==========================================
+             SITE FOOTER
+             ========================================== -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <div class="brand-logo" style="margin-bottom: 0.5rem;">
+                            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span class="brand-title" style="font-size: 1.1rem;">AUTHGUARD</span>
+                        </div>
+                        <p class="footer-brand-desc">
+                            A complete educational cybersecurity platform built for the Advanced Data Structures (ADS) curriculum. 
+                            Demonstrating practical implementations of Tries, Bloom Filters, and Cryptographic Hash Tables.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="footer-col-title">Core Systems</div>
+                        <ul class="footer-links">
+                            <li><a href="#checker"><i class="fa-solid fa-chevron-right text-xs mr-1 text-cyan"></i> Password Checker</a></li>
+                            <li><a href="#login"><i class="fa-solid fa-chevron-right text-xs mr-1 text-cyan"></i> Login Simulator</a></li>
+                            <li><a href="#dashboard"><i class="fa-solid fa-chevron-right text-xs mr-1 text-cyan"></i> Security Dashboard</a></li>
+                            <li><a href="#ads"><i class="fa-solid fa-chevron-right text-xs mr-1 text-cyan"></i> ADS Architecture Lab</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="footer-col-title">ADS Algorithms</div>
+                        <ul class="footer-links">
+                            <li><a href="#ads"><i class="fa-solid fa-chevron-right text-xs mr-1 text-purple"></i> Prefix Tree (Trie) O(L)</a></li>
+                            <li><a href="#ads"><i class="fa-solid fa-chevron-right text-xs mr-1 text-purple"></i> Bloom Filter k-Hash Set</a></li>
+                            <li><a href="#ads"><i class="fa-solid fa-chevron-right text-xs mr-1 text-purple"></i> SHA-256 Avalanche Diffusion</a></li>
+                            <li><a href="#ads"><i class="fa-solid fa-chevron-right text-xs mr-1 text-purple"></i> Sliding Window Queue</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div>
+                        AUTHGUARD &copy; 2026. College Project for <strong>Advanced Data Structures (ADS)</strong>.
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="badge-cyan">100% Client-Side Simulation</span>
+                        <span class="badge-success">Zero Network Transmission</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts (Ordered by dependency) -->
+    <script src="js/ads/cryptoUtils.js"></script>
+    <script src="js/ads/trie.js"></script>
+    <script src="js/ads/bloomFilter.js"></script>
+    <script src="js/services/authService.js"></script>
+    <script src="js/components/checker.js"></script>
+    <script src="js/components/login.js"></script>
+    <script src="js/components/dashboard.js"></script>
+    <script src="js/components/adsLab.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
